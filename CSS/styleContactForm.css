@@ -1,0 +1,33 @@
+.contactMeForm {
+    display: flex;
+    flex-direction: column;
+    line-height: 24px;
+    margin-top: 48px;
+}
+
+.form-inputs {
+    display: flex;
+    flex-direction: column;
+    align-self: flex-end;
+}
+
+.contactMeForm input {
+    margin-top: 12px;
+    height: 36px;
+    color: black;
+    width: var(--container-width);
+}
+
+.contactMeForm textarea {
+    margin-top: 12px;
+    height: 150px;
+    color: black;
+    width: var(--container-width);
+}
+
+.contactMeForm label {
+    font-size: 24px;
+    font-weight: bold;
+    align-self: flex-start;
+    margin-left: calc(100% - var(--container-width));
+}

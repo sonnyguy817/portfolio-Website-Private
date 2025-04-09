@@ -1,0 +1,293 @@
+*{
+    color: rgb(214, 224, 252);
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+}
+body{
+    background-image: linear-gradient(to top, #09203f 0%, #537895 100%);
+}
+h1{
+    font-size: 40px;
+    font-weight:bold;
+    color:white;
+}
+
+h2{
+    color: white;
+}
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+}
+
+header {
+    padding: 10px 20px 5px 20px;
+}
+
+aside {
+    display: flex;
+    flex-direction: column;
+}
+
+main {
+    flex: 1;
+    min-height: 100%;
+    display: flex; /* Make main a flex container */
+    flex-direction: column; /* Stack sections vertically */
+    align-items: center; /* Center sections horizontally */
+    padding: 20px; /* Add padding for spacing */
+}
+
+.header-container {
+    display: flex;
+    line-height: 2;
+    border: 2px dotted rgb(96, 139, 168);
+    justify-content: center;
+}
+
+.main-container {
+    display: flex;
+    min-height: calc(100vh - 65px);
+}
+
+.side-container {
+    width: 20%;
+    padding: 20px;
+}
+
+.navBar ul {
+    margin-right: 50px;
+    list-style-type: none;
+    text-align: right;
+}
+
+.navBar a {
+    color: white;
+    line-height: 64px;
+    font-size: 32px;
+    text-decoration: none;
+}
+
+.contactBar ul {
+    margin-right: 50px;
+    display: flex;
+    list-style-type: none;
+    justify-content: space-around;
+}
+
+.contactBar a {
+    color: white;
+    line-height: 64px;
+    font-size: 24px;
+    text-decoration: none;
+}
+
+
+.story-container {
+    display: flex;
+    flex-direction: column;
+    line-height: 24px;
+    max-width: 450px;
+    text-align: left;
+}
+
+.story-container h2 {
+    text-align: left;
+}
+
+.story-container p {
+    max-width: 450px;
+    text-align: left;
+}
+
+.education-container {
+    display: flex;
+    flex-direction: column;
+    padding: 8px 8px 8px 32px;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+    transition: 0.3s;
+    width: 450px;
+    text-align: left;
+    line-height: 24px;
+}
+
+
+.working-container {
+    margin-top: 100px;
+    display: flex;
+    flex-direction: column;
+    padding: 8px 8px 8px 32px;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+    transition: 0.3s;
+    width: 450px;
+    text-align: left;
+    line-height: 24px;
+}
+
+.project-container {
+    margin-top: 100px;
+    display: flex;
+    flex-direction: column;
+    padding: 8px 8px 8px 32px;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+    transition: 0.3s;
+    width: 450px;
+    text-align: left;
+    line-height: 24px;
+}
+
+.experience-hsbc-card:hover{
+    transform: scale(1.2);
+    transition: 1s ease;
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.1);
+}
+
+.project-card {
+    margin-bottom: 20px;
+    transition: transform 0.3s ease; /* Smooth hover transition */
+    cursor: pointer; /* Indicate it¡¦s clickable */
+    position: relative; /* Ensure it has a positioning context */
+}
+
+.project-card:hover {
+    transform: scale(1.05); /* Scale up on hover */
+}
+
+.project-card p {
+    margin-bottom: 15px;
+}
+
+.tool-container {
+    display: flex;
+    gap: 10px;
+    transition: 0.3s;
+    width: 450px;
+    text-align: left;
+}
+
+.tool {
+    color: rgba(0, 255, 221,1);
+    background-color: rgba(0, 255, 221,0.1);
+    padding: 5px 10px;
+    border-radius: 12px;
+    font-size: 14px;
+}
+
+.backToTop{
+    place-self:end;
+    position: sticky;
+    bottom:50px;
+    width: 60px;
+    height: 60px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #333333;
+    background-color: #b9c7da;
+    font-size: 30px;
+    border-radius: 6px;
+    border: none;
+    box-shadow: -2px -2px 10px 0px rgba(255, 255, 255, 0.5), 2px 2px 10px 0px rgba(0, 0, 0, 0.3);
+    cursor: pointer;
+    display: none;
+}
+
+.modal {
+    display: none; /* Hidden by default */
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0); /* Start transparent */
+    z-index: 1000;
+    overflow: auto;
+    transition: background-color 0.5s ease; /* Fade in/out overlay */
+}
+
+.modal.show {
+    display: block; /* Show when active */
+    background-color: rgba(0, 0, 0, 0.7); /* Fade to semi-transparent black */
+}
+
+/* Modal Content */
+.modal-content {
+    background-color: #1b2d36;
+    color: rgb(214, 224, 252);
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+    width: 90%;
+    max-width: 600px;
+    position: absolute; /* Position dynamically with JS */
+    opacity: 0; /* Start invisible for animation */
+    transition: opacity 0.5s ease; /* Fade in/out */
+}
+
+/* Modal Content When Visible */
+.modal-content.show {
+    opacity: 1;
+}
+
+/* Zoom In Animation (from card to modal) */
+@keyframes zoomIn {
+    from {
+        transform: scale(1.05); /* Start at the hovered card size */
+        opacity: 1;
+    }
+    to {
+        transform: scale(1); /* End at normal size */
+        top: 50%; /* Center vertically */
+        left: 50%; /* Center horizontally */
+        transform: translate(-50%, -50%); /* Adjust for centering */
+        opacity: 1;
+    }
+}
+
+/* Zoom Out Animation (from modal to card) */
+@keyframes zoomOut {
+    from {
+        transform: scale(1);
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        opacity: 1;
+    }
+    to {
+        transform: scale(1.05); /* End at the hovered card size */
+        opacity: 0;
+    }
+}
+
+/* Close Button */
+.modal-close {
+    position: absolute;
+    top: 10px;
+    right: 15px;
+    color: #b9c7da;
+    font-size: 30px;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+.modal-close:hover {
+    color: #ffffff;
+}
+
+/* Screenshot Image */
+.modal-image {
+    max-width: 100%;
+    height: auto;
+    border-radius: 5px;
+    margin-bottom: 15px;
+}
+
+/* Modal Text */
+.modal-content h3 {
+    margin-bottom: 10px;
+    color: white;
+}
+
+.modal-content p {
+    line-height: 24px;
+}

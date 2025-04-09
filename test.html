@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>Siu Hong CHEUNG Resume</title>
+    <style>
+        
+
+    </style>
+
+</head>
+
+<body>
+    <header id="top">
+        <div class="header-container">
+            <h1>Siu Hong CHEUNG</h1>
+        </div>
+    </header>
+    <div class="main-container">
+        <aside class="side-container">
+            <!-- Sidebar content -->
+        </aside>
+        <main>
+            <!-- Other sections -->
+            <section id="projectCard">
+                <article>
+                    <div class="project-container">
+                        <h2>Projects</h2>
+                        <div class="project-card">
+                            <h3>Big Two Game Calculator</h3>
+                            <p>A tool to calculate scores and track gameplay for the card game Big Two, built to practice my programming skills.</p>
+                            <div class="tool-container">
+                                <span class="tool">Java</span>
+                                <span class="tool">Android Studio</span>
+                                <span class="tool">MySQL</span>
+                            </div>
+                        </div>
+                    </div>
+                </article>
+            </section>
+        </main>
+    </div>
+    <!-- Modal -->
+    <div class="modal" id="projectModal">
+        <div class="modal-content">
+            <span class="modal-close">กั</span>
+            <img src="path/to/screenshot.jpg" alt="Big Two Game Calculator Screenshot" class="modal-image">
+            <h3>Big Two Game Calculator</h3>
+            <p>This project is a score calculator for the card game Big Two. It tracks gameplay, calculates scores based on card combinations, and provides a user-friendly interface for players. Built with Java and Android Studio, it helped me practice my programming skills and learn about game logic implementation.</p>
+        </div>
+    </div>
+    <!-- Back to Top Button -->
+    <button class="backToTop">Top</button>
+
+    <!-- Add this at the bottom of your HTML, just before </body> -->
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            // Get elements
+            const projectCard = document.querySelector('.project-card');
+            const modal = document.querySelector('#projectModal');
+            const modalContent = document.querySelector('.modal-content');
+            const closeModal = document.querySelector('.modal-close');
+    
+            // Debugging: Check if elements are found
+            console.log('Project Card:', projectCard);
+            console.log('Modal:', modal);
+            console.log('Modal Content:', modalContent);
+            console.log('Close Modal:', closeModal);
+    
+            // Show modal with zoom-in effect
+            projectCard.addEventListener('click', function() {
+                // Get the project card's position and size
+                const cardRect = projectCard.getBoundingClientRect();
+                const scrollY = window.scrollY; // Account for scroll position
+    
+                // Set the modal content's initial position and size to match the card
+                modalContent.style.width = `${cardRect.width}px`;
+                modalContent.style.height = `${cardRect.height}px`;
+                modalContent.style.top = `${cardRect.top + scrollY}px`;
+                modalContent.style.left = `${cardRect.left}px`;
+    
+                // Show the modal and trigger the zoom-in animation
+                modal.classList.add('show');
+                modalContent.classList.add('show');
+                modalContent.style.animation = 'zoomIn 0.5s ease forwards';
+    
+                // Focus on the close button for accessibility
+                closeModal.focus();
+            });
+    
+            // Hide modal with zoom-out effect
+            function hideModal() {
+                // Get the project card's position again (in case the window was resized or scrolled)
+                const cardRect = projectCard.getBoundingClientRect();
+                const scrollY = window.scrollY;
+    
+                // Set the modal content's final position to match the card
+                modalContent.style.width = `${cardRect.width}px`;
+                modalContent.style.height = `${cardRect.height}px`;
+                modalContent.style.top = `${cardRect.top + scrollY}px`;
+                modalContent.style.left = `${cardRect.left}px`;
+    
+                // Trigger the zoom-out animation
+                modalContent.style.animation = 'zoomOut 0.5s ease forwards';
+    
+                // Hide the modal after the animation completes
+                setTimeout(() => {
+                    modal.classList.remove('show');
+                    modalContent.classList.remove('show');
+                }, 500); // Match the animation duration (0.5s)
+            }
+    
+            // Close modal when clicking the close button
+            closeModal.addEventListener('click', hideModal);
+    
+            // Close modal when clicking outside the modal content
+            window.addEventListener('click', function(event) {
+                if (event.target === modal) {
+                    hideModal();
+                }
+            });
+    
+            // Close modal when pressing the Esc key
+            window.addEventListener('keydown', function(event) {
+                if (event.key === 'Escape' && modal.classList.contains('show')) {
+                    hideModal();
+                }
+            });
+    
+            // Back to Top Button Functionality
+            const backToTopButton = document.querySelector('.backToTop');
+            backToTopButton.addEventListener('click', function() {
+                window.scrollTo({
+                    top: 0,
+                    behavior: 'smooth'
+                });
+            });
+            window.addEventListener('scroll', function() {
+                if (window.scrollY > 200) {
+                    backToTopButton.style.display = 'block';
+                } else {
+                    backToTopButton.style.display = 'none';
+                }
+            });
+        });
+    </script>
+</body>
