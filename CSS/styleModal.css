@@ -144,11 +144,53 @@
 }
 
 @media (max-width: 768px) {
-    .carousel {
-        height: auto;
+    .modal-content {
+        width: 90%;
+        margin: 10% auto;
+        padding: 15px;
     }
 
-    .slides-container {
-        width: 100%;
+    .modal-header {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .modal-icon {
+        max-width: 50px;
+    }
+
+    .carousel {
+        height: 200px;
+    }
+
+    .prev, .next {
+        padding: 8px;
+        font-size: 16px;
+    }
+
+    .dot {
+        width: 8px;
+        height: 8px;
+    }
+}
+
+@media (max-width: 480px) {
+    .modal-content {
+        width: 95%;
+        margin: 5% auto;
+        padding: 10px;
+    }
+
+    .modal-content h2 {
+        font-size: 20px;
+    }
+
+    .modal-content p {
+        font-size: 14px;
+        line-height: 1.5;
+    }
+
+    .carousel {
+        height: 180px;
     }
 }

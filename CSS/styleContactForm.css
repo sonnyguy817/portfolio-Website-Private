@@ -31,3 +31,46 @@
     align-self: flex-start;
     margin-left: calc(100% - var(--container-width));
 }
+
+@media (max-width: 768px) {
+    .contactMeForm {
+        margin: 20px 0;
+    }
+
+    .form-inputs {
+        width: 100%;
+    }
+
+    .contactMeForm input,
+    .contactMeForm textarea {
+        width: 100%;
+        box-sizing: border-box;
+    }
+
+    .contactMeForm label {
+        margin-left: 0;
+        text-align: center;
+        width: 100%;
+    }
+}
+
+@media (max-width: 480px) {
+    .contactMeForm label {
+        font-size: 20px;
+    }
+
+    .contactMeForm input {
+        height: 32px;
+        font-size: 14px;
+    }
+
+    .contactMeForm textarea {
+        height: 120px;
+        font-size: 14px;
+    }
+
+    .contactMeForm input[type="submit"] {
+        font-size: 14px;
+        padding: 8px 16px;
+    }
+}
