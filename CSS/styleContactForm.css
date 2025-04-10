@@ -2,7 +2,7 @@
     display: flex;
     flex-direction: column;
     line-height: 24px;
-    margin-top: 48px;
+    margin-top: 40px;
 }
 
 .form-inputs {
@@ -11,25 +11,62 @@
     align-self: flex-end;
 }
 
-.contactMeForm input {
+.contactMeForm label {
+    font-size: 16px;
+    font-weight: bold;
     margin-top: 12px;
-    height: 36px;
-    color: black;
+    color: rgb(214, 224, 252);
+}
+
+.contactMeForm input,
+.contactMeForm textarea {
+    margin-top: 8px;
+    padding: 8px 12px;
+    border: 1px solid rgba(214, 224, 252, 0.3);
+    border-radius: 4px;
+    background-color: rgba(214, 224, 252, 0.1);
+    color: rgb(214, 224, 252);
     width: var(--container-width);
+    transition: all 0.3s ease;
+}
+
+.contactMeForm input:focus,
+.contactMeForm textarea:focus {
+    outline: none;
+    border-color: rgba(214, 224, 252, 0.8);
+    background-color: rgba(214, 224, 252,0.2);
 }
 
 .contactMeForm textarea {
-    margin-top: 12px;
-    height: 150px;
-    color: black;
-    width: var(--container-width);
+    height: 100px;
+    resize: vertical;
 }
 
-.contactMeForm label {
-    font-size: 24px;
+.contactMeForm input[type="submit"] {
+    margin-top: 20px;
+    padding: 10px 20px;
+    background-color: rgba(214, 224, 252, 0.2);
+    border: 1px solid rgba(214, 224, 252, 0.5);
+    color: rgb(214, 224, 252);
     font-weight: bold;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    width: auto;
     align-self: flex-start;
-    margin-left: calc(100% - var(--container-width));
+}
+
+.contactMeForm input[type="submit"]:hover {
+    background-color: rgba(214, 224, 252, 0.3);
+    transform: translateY(-2px);
+}
+
+.contactMeForm input[type="email"]:invalid {
+    border-color: rgba(255, 0, 0, 0.3);
+}
+
+.contactMeForm input:required:invalid,
+.contactMeForm textarea:required:invalid {
+    border-left: 3px solid rgba(255, 0, 0, 0.3);
 }
 
 @media (max-width: 768px) {
@@ -49,14 +86,14 @@
 
     .contactMeForm label {
         margin-left: 0;
-        text-align: center;
+        text-align: left;
         width: 100%;
     }
 }
 
 @media (max-width: 480px) {
     .contactMeForm label {
-        font-size: 20px;
+        font-size: 14px;
     }
 
     .contactMeForm input {

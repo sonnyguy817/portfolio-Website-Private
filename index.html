@@ -18,86 +18,93 @@
         <aside class="side-container"">
             <nav class="navBar">
                 <ul>
-                    <li><a href="#story" class="navItem">About</a></li>
-                    <li><a href="#educationCard" class="navItem">Education</a></li>
-                    <li><a href="#workingExperienceCard" class="navItem">Work Experience</a></li>
-                    <li><a href="#projectCard" class="navItem">Project</a></li>
-                    <li><a href="contact.asp" class="navItem">Contact</a></li>
+                    <li><a href="#story" class="navItem" onclick="toggleLink(this)">About</a></li>
+                    <li><a href="#educationCard" class="navItem" onclick="toggleLink(this)">Education</a></li>
+                    <li><a href="#workingExperienceCard" class="navItem" onclick="toggleLink(this)">Work Experience</a></li>
+                    <li><a href="#projectCard" class="navItem" onclick="toggleLink(this)">Project</a></li>
                 </ul>
             </nav>
             <nav class="contactBar">
                 <ul>
-                    <li><a href="default.asp">Email</a></li>
-                    <li><a href="https://github.com/sonnyguy817">GitHub</a></li>
-                    <li><a href="experience.asp">LinkedIn</a></li>
+                    <li><a href="mailto:sonnyguy17@gmail.com"><img src="https://img.icons8.com/?size=100&id=12623&format=png&color=FFFFFF" style="width:36px; height:36px;"></a></li>
+                    <li><a href="https://github.com/sonnyguy817">
+                        <img src="https://img.icons8.com/?size=100&id=3tC9EQumUAuq&format=png&color=FFFFFF" style="width:36px; height:36px;"/>
+                    </a></li>
+                    <li><a href="https://www.linkedin.com/in/hong-csh-b3b467322/"><img src="https://img.icons8.com/?size=100&id=8808&format=png&color=FFFFFF" style="width:36px; height:36px;"></a></li>
                 </ul>
             </nav> 
-            <form class="contactMeForm" method="POST" action="/submit">
-                <label>Contact Me</label>
+            <form class="contactMeForm" method="POST" action="mailto:sonnyguy17@gmail.com" enctype="text/plain">
+                
                 <div class="form-inputs">
-                    <input type="text" name="name" placeholder="Name">
-                    <input type="text" name="email" placeholder="company@email.com">
-                    <input type="text" name="subject" placeholder="Subject">
-                    <textarea name="message" placeholder="Message here.."></textarea>
-                    <input type="submit" value="Send the message">
+                    <label for="name">Name *</label>
+                    <input type="text" id="name" name="name" placeholder="Your name" required>
+                    <label for="email">Email *</label>
+                    <input type="email" id="email" name="email" placeholder="your.email@example.com" required>
+                    <label for="subject">Subject *</label>
+                    <input type="text" id="subject" name="subject" placeholder="Subject of your message" required>
+                    <label for="message">Message *</label>
+                    <textarea id="message" name="message" placeholder="Your message here..." required></textarea>
+                    <input type="submit" value="Send me a message!">
                 </div>
             </form>
         </aside>
+
+
+        
         <main>
             <section id="story">
                 <article>
                     <div class="story-container">
                         <h2>About Me..</h2>
-                        <p>My coding journey started in late 2020 with a Python Basics course at Danger Education School,
-                            which led me to pursue a Computer Science degree at HKMU, focusing on Java and Android Studio.
-                            You can see these skills in my projects.</p>
-                        <p>From 2018 to 2023, I worked in banking and learned the value of working independently.
-                            In 2023, I co-founded a catering business with friends,
-                            which taught me how to adapt and keep learningÂ¡Xskills I use in IT.
-                            Even with a busy schedule, I make time to code. Check out my projects to see the results.
-                            My experiences in banking and business have helped me develop a habit of self-directed learning,
-                            which I apply to coding.</p>
+                        <p> 
+                            In 2020, I took a <span>Python</span> course that sparked my interest in coding and everything related to it.
+                             After that, to learn more, explore further, and strengthen my foundation,
+                              I enrolled in <span>HKMU's</span> Computer Science and Networking degree, focusing on <span>Java</span>, <span>JavaScript</span>, and some web-related knowledge.
+                             </p>
+                        <p> During that time, I was working in banking, and later I started a catering business with some partners.
+                             Both experiences taught me how to handle things independently and encouraged me to keep learning and getting better.
+                             </p>
+                        <p> Even with a packed schedule, I still find time to practice coding. You can take a look at my projects to see what I've worked on.
+                             </p>
                     </div>
                 </article>
             </section>
 
-
-                <section id="educationCard" >
-                    <article>
-                        <div class="education-container">
-                            <h2>Education</h2>
-                            <a href="https://www.hkmu.edu.hk/st/computing/programmes/part-time/undergraduate/5-credit-unit/bsccn-bschcn/" class="card-link">
-                            <div id="education-HKMU" class="card" >
-                                <div style="display:flex; align-items:center; gap:10px;">
-                                <h3>Bachelor of Science in Computer Science</h3>
-                                <img style="width:24px; height:100%;" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABgAAAAYCAYAAADgdz34AAAAAXNSR0IArs4c6QAAANxJREFUSEvtlesNwjAQg91NYBO6CUwCTMIodJRuAjVKquiSSyz6kJDIn6pV5O/Oca4dNl7dxvrYHXAC8ABwKHR2A3AP36/Tk+/emgu3HTwBEOItFeICXkFZtc7rZDUArWTX1tJVABTledHS0UAWA6z4EUBq1yJASTyGIkK+BtTEU0iMc3bRailSxLN42zh6AFWcFs3Vk6YCziExTAsP1FssML2MMoCCWXUFSuaA2oE6dP+AplNNi1rjukmYZtMAoI8b7SFzcDEttX9CDcIYXwLks0+d+0rlxT2/D3gDqAA1GfNX0DYAAAAASUVORK5CYII="/>
-                                </div>
-                                <p>Bachelor of Science in Computing and Networking (Part-Time)</p>
-                                <p>2020 - 2025 (Expected Graduation - SEP 2025)</p>
+            <section id="educationCard" >
+                <article>
+                    <div class="education-container">
+                        <h2>Education</h2>
+                        <a href="https://www.hkmu.edu.hk/st/computing/programmes/part-time/undergraduate/5-credit-unit/bsccn-bschcn/" class="card-link">
+                        <div id="education-HKMU" class="card" >
+                            <div style="display:flex; align-items:center; gap:10px;">
+                            <h3>Bachelor of Science in Computer Science</h3>
+                            <img style="width:24px; height:100%;" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABgAAAAYCAYAAADgdz34AAAAAXNSR0IArs4c6QAAANxJREFUSEvtlesNwjAQg91NYBO6CUwCTMIodJRuAjVKquiSSyz6kJDIn6pV5O/Oca4dNl7dxvrYHXAC8ABwKHR2A3AP36/Tk+/emgu3HTwBEOItFeICXkFZtc7rZDUArWTX1tJVABTledHS0UAWA6z4EUBq1yJASTyGIkK+BtTEU0iMc3bRailSxLN42zh6AFWcFs3Vk6YCziExTAsP1FssML2MMoCCWXUFSuaA2oE6dP+AplNNi1rjukmYZtMAoI8b7SFzcDEttX9CDcIYXwLks0+d+0rlxT2/D3gDqAA1GfNX0DYAAAAASUVORK5CYII="/>
                             </div>
-                            </a>
-                            <div id="education-HKCT" class="card-link">  
-                                <h3>Higher Diploma in Hong Kong College of Technology</h3>
-                                <p>Higher Diploma in Toursim Management (Hospitatlity)<p>
-                                <p>2009 - 2012</p>
-                                <p>Associate Diploma (Business  Studies)<p>
-                                <p>2008 - 2009</p>
-                            </div>
-
-                            <a href="https://danger.education/data-science-and-programming-academy-tc/" class="card-link">
-                                <div id="education-danger" class="card">  
-                                    <div style="display:flex; align-items:center; gap:10px;">
-                                        <h3>Danger Education</h3>
-                                        <img style="width:24px; height:100%;" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABgAAAAYCAYAAADgdz34AAAAAXNSR0IArs4c6QAAANxJREFUSEvtlesNwjAQg91NYBO6CUwCTMIodJRuAjVKquiSSyz6kJDIn6pV5O/Oca4dNl7dxvrYHXAC8ABwKHR2A3AP36/Tk+/emgu3HTwBEOItFeICXkFZtc7rZDUArWTX1tJVABTledHS0UAWA6z4EUBq1yJASTyGIkK+BtTEU0iMc3bRailSxLN42zh6AFWcFs3Vk6YCziExTAsP1FssML2MMoCCWXUFSuaA2oE6dP+AplNNi1rjukmYZtMAoI8b7SFzcDEttX9CDcIYXwLks0+d+0rlxT2/D3gDqAA1GfNX0DYAAAAASUVORK5CYII="/>
-                                    </div>
-                                    <p>Python Explore & Practitioner Courses<p>
-                                    <p>Sep 2020 - Jan 2021</p>
-                                </div>
-                            </a>
+                            <p>Bachelor of Science in Computing and Networking (Part-Time)</p>
+                            <p>2020 - 2025 (Expected Graduation - SEP 2025)</p>
                         </div>
-                    </article>
-                </section>
+                        </a>
+                        <div id="education-HKCT" class="card-link">  
+                            <h3>Higher Diploma in Hong Kong College of Technology</h3>
+                            <p>Higher Diploma in Toursim Management (Hospitatlity)<p>
+                            <p>2009 - 2012</p>
+                            <p>Associate Diploma (Business  Studies)<p>
+                            <p>2008 - 2009</p>
+                        </div>
 
+                        <a href="https://danger.education/data-science-and-programming-academy-tc/" class="card-link">
+                            <div id="education-danger" class="card">  
+                                <div style="display:flex; align-items:center; gap:10px;">
+                                    <h3>Danger Education</h3>
+                                    <img style="width:24px; height:100%;" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABgAAAAYCAYAAADgdz34AAAAAXNSR0IArs4c6QAAANxJREFUSEvtlesNwjAQg91NYBO6CUwCTMIodJRuAjVKquiSSyz6kJDIn6pV5O/Oca4dNl7dxvrYHXAC8ABwKHR2A3AP36/Tk+/emgu3HTwBEOItFeICXkFZtc7rZDUArWTX1tJVABTledHS0UAWA6z4EUBq1yJASTyGIkK+BtTEU0iMc3bRailSxLN42zh6AFWcFs3Vk6YCziExTAsP1FssML2MMoCCWXUFSuaA2oE6dP+AplNNi1rjukmYZtMAoI8b7SFzcDEttX9CDcIYXwLks0+d+0rlxT2/D3gDqAA1GfNX0DYAAAAASUVORK5CYII="/>
+                                </div>
+                                <p>Python Explore & Practitioner Courses<p>
+                                <p>Sep 2020 - Jan 2021</p>
+                            </div>
+                        </a>
+                    </div>
+                </article>
+            </section>
 
             <section id="workingExperienceCard">
                 <article>
@@ -150,7 +157,7 @@
                                 <div class="tool-container">
                                     <span class="tool">Java</span>
                                     <span class="tool">Android Studio</span>
-                                    <span class="tool">MySQL</span>
+                                    <span class="tool">SQL</span>
                                 </div>
                             </div>
                         </div>
@@ -166,7 +173,7 @@
     <section>
         <div class="modal" id="projectModal">
             <div class="modal-content">
-                <span class="modal-close">Â¡Ã‘</span>
+                <span class="modal-close">¡Ñ</span>
                 <div class="modal-header">
                     <img src="icon/pokerTransparent.png" alt="Big Two Game Calculator Icon" class="modal-icon">
                     <h2>Big Two Game Calculator</h2>
@@ -201,11 +208,16 @@
         const closeModal = document.querySelector('.modal-close');
         const prevBtn = document.querySelector('.prev');
         const nextBtn = document.querySelector('.next');
+        const navItemsList = document.querySelectorAll('.navItem');
         let slideImages, slideContainer, navDots;
         let currentIndex = 0;
         let imageGap = 30;
 
-    
+        function toggleLink(navItem){
+            navItemsList.forEach(item => item.classList.remove('selected'));
+            navItem.classList.toggle('selected');
+        }
+
         function updateSlide() {
             const slideWidth = slideImages[0].offsetWidth; // Width of one slide
             const containerWidth = slideContainer.offsetWidth; // Width of visible container
@@ -222,11 +234,11 @@
         /*
         "Dot creation flows:
          Loop through each slide
-          Â¡Ã· Create a <span>
-             Â¡Ã· Add dot class
-              Â¡Ã· Attach a click event to set currentIndex and update the slide
-               Â¡Ã· Append the dot to dotsContainer
-                Â¡Ã· Finally, store all dots in navDots for later use."
+          ¡÷ Create a <span>
+             ¡÷ Add dot class
+              ¡÷ Attach a click event to set currentIndex and update the slide
+               ¡÷ Append the dot to dotsContainer
+                ¡÷ Finally, store all dots in navDots for later use."
         */
         function initializeSlideshow() {
             slideImages = modal.querySelectorAll('.slide');
